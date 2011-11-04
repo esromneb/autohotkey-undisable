@@ -9,14 +9,21 @@
 
 Enable_Window_Under_Cursor() ; By Raccoon 31-Aug-2010
 {
+  ToolTip, Trying...
   MouseGetPos,,, WinHndl, CtlHndl, 2
   WinGet, Style, Style, ahk_id %WinHndl%
   if (Style & 0x8000000) { ; WS_DISABLED.
     WinSet, Enable,, ahk_id %WinHndl%
+    ToolTip, Window Undisabled!
+    Sleep, 250
   }
   WinGet, Style, Style, ahk_id %CtlHndl%
   if (Style & 0x8000000) { ; WS_DISABLED.
     WinSet, Enable,, ahk_id %CtlHndl%
+    ToolTip, Undisabled!
+    Sleep, 250
   }
+  Sleep, 250
+  ToolTip,
 }
 ; End of Snippet
